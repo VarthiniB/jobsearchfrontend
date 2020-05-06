@@ -1,0 +1,87 @@
+
+<h4>Add Job</h4>  
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-globe text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Jobs Applied</p>
+              <p class="card-title">100
+                <p>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">   
+    
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-globe text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Applied today</p>
+              <p class="card-title">10
+                <p>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <div class="card-footer ">   
+    
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Add Applied</h5>
+       
+      </div>
+      <div class="card-body"> <form #JobEntry = "ngForm" (ngSubmit) = "onClickSubmit(JobEntry.value)" >
+          <input type = "text" name = "Org" placeholder = "Organization" ngModel>
+          <br/> <br/>
+          <input type = "text" name = "position" placeholder = "Position" ngModel>
+          <br/> <br/>
+          <input type = "text" name = "AppliedThrough" placeholder = "Applied Through" ngModel>
+          <br/> <br/>
+          <input type = "date" name = "AppliedOn" placeholder = "Applied On" ngModel>
+          <br/> <br/>
+          <input type = "text" name = "url" placeholder = "URL" ngModel>
+          <br/> <br/>
+          <input type = "file" name = "CVUploaded" placeholder = "CV Uploaded" ngModel>
+          <br/> <br/>
+          <input type = "submit" value = "submit">
+       </form></div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Calender</h5>
+        
+      </div>
+      <div class="card-body"> <icons-cmp></icons-cmp></div>
+    </div>
+  </div>
+</div>
+

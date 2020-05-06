@@ -1,0 +1,21 @@
+.circles {
+    display: flex;
+  }
+  .circle-with-text {
+    background: linear-gradient(orange, red);
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    text-align: center;
+    margin: 5px 20px;
+    font-size: 15px;
+    font-family: 'Times New Roman';
+    padding: 5px;
+    display: flex;
+    height:15px;
+    width: 15px;
+    color: #fff;
+  }
+ .card{
+  margin-bottom: 1px;
+ }

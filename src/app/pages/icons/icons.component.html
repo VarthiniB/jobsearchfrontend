@@ -1,0 +1,26 @@
+<table style="align-items: center">
+  <tr *ngFor="let row of array1">
+    <td class="field" *ngFor="let field of row">
+  
+        <div class="card" >
+            <div class="card-header">
+              {{field}}
+              </div>
+            </div>
+        </td>
+  </tr>
+    <tr *ngFor="let row of data">
+      <td class="field" *ngFor="let field of row">
+      
+        <div class="card" *ngIf="field.day">
+       <div style="align-self: center"> {{field.day}} <br></div>
+        <div class="circles">
+          <div class="circle-with-text" *ngIf="field.jobcount">
+            {{field.jobcount}} 
+          </div>
+         </div>
+        </div>
+ 
+      </td>
+    </tr>
+  </table>
