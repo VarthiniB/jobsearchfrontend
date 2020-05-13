@@ -1043,7 +1043,7 @@ body.swal2-iosfix {
 
 .swal2-modal {
   background-color: #fff;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Times New Roman';
   border-radius: 5px;
   box-sizing: border-box;
   text-align: center;
@@ -1145,8 +1145,7 @@ body.swal2-iosfix {
   width: 38px;
   height: 40px;
   font-size: 36px;
-  line-height: 40px;
-  font-family: serif;
+  line-height: 40px;font-family: 'Times New Roman';
   position: absolute;
   top: 5px;
   right: 8px;
@@ -1365,7 +1364,7 @@ body.swal2-iosfix {
   right: 16px; }
 
 .swal2-icon.swal2-warning {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Times New Roman';
   color: #FFB236;
   border-color: #FFB236;
   font-size: 60px;
@@ -1373,7 +1372,7 @@ body.swal2-iosfix {
   text-align: center; }
 
 .swal2-icon.swal2-info {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Times New Roman';
   color: #3fc3ee;
   border-color: #9de0f6;
   font-size: 60px;
@@ -1381,7 +1380,7 @@ body.swal2-iosfix {
   text-align: center; }
 
 .swal2-icon.swal2-question {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Times New Roman';
   color: #87adbd;
   border-color: #c9dae1;
   font-size: 60px;
@@ -2967,7 +2966,7 @@ table.dataTable thead .sorting_desc_disabled:after {
   bottom: 8px;
   right: 8px;
   display: block;
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Times New Roman';
   opacity: 0.5; }
 
 table.dataTable thead .sorting:after {
@@ -3058,7 +3057,7 @@ table.dataTable thead .sorting_desc_disabled:after {
   display: inline-block;
   bottom: 0px;
   right: -7px;
-  font-family: 'FontAwesome';
+  font-family: 'Times New Roman';
   opacity: 0.8; }
 
 table.dataTable thead .disabled-sorting.sorting:after,
@@ -3130,7 +3129,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
   box-shadow: 0 0 3px #444;
   box-sizing: content-box;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Times New Roman';
   line-height: 18px;
   content: '+';
   background-color: #FFF; }
@@ -3178,7 +3177,7 @@ table.dataTable.dtr-column > tbody > tr > th.control:before {
   box-shadow: 0 0 3px #444;
   box-sizing: content-box;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Times New Roman';
   line-height: 14px;
   content: '+';
   background-color: #31b131; }
@@ -3287,7 +3286,7 @@ svg {
   border-radius: 3px;
   background: #292929;
   color: white;
-  font-family: sans-serif, Verdana;
+  font-family: 'Times New Roman';
   font-size: smaller;
   padding: 3px; }
 
@@ -3452,7 +3451,7 @@ body .fc {
   font-size: 1em;
   text-align: center;
   overflow: hidden;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Times New Roman';
   /* don't allow browser text-selection */
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -4332,7 +4331,7 @@ be a descendant of the grid when it is being dragged.
   overflow: hidden;
   line-height: 8px;
   font-size: 11px;
-  font-family: monospace;
+  font-family: 'Times New Roman';
   text-align: center;
   cursor: s-resize; }
 
@@ -6195,10 +6194,8 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400; }
+  font-family: 'Times New Roman'
+}
 
 a {
   color: #51cbce; }
@@ -6326,7 +6323,7 @@ a.text-gray:focus, a.text-gray:hover {
 body {
   color: #2c2c2c;
   font-size: 14px;
-  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Times New Roman';
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased; }
 
@@ -7601,7 +7598,7 @@ img {
     background-color: #AAA7A4;
     transition: opacity 0.3s linear; }
   .form-check .form-check-sign::after {
-    font-family: 'FontAwesome';
+    font-family: 'Times New Roman';
     content: "\f00c";
     top: -1px;
     text-align: center;
@@ -7642,7 +7639,7 @@ img {
     cursor: not-allowed; }
 
 .form-check-radio .form-check-sign::before {
-  font-family: 'FontAwesome';
+  font-family: 'Times New Roman';
   content: "\f10c";
   font-size: 22px;
   -webkit-font-smoothing: antialiased;
@@ -7664,7 +7661,7 @@ img {
   display: block; }
 
 .form-check-radio input[type="radio"]:checked + .form-check-sign::after {
-  font-family: 'FontAwesome';
+  font-family: 'Times New Roman';
   content: "\f192";
   top: -5px;
   position: absolute;
@@ -8727,7 +8724,7 @@ img {
       margin: 10px 10px;
       color: #FFFFFF;
       line-height: 20px;
-      font-family: 'Muli', "Helvetica", Arial, sans-serif; }
+      font-family: 'Times New Roman'; }
     .sidebar .logo .simple-text,
     .off-canvas-sidebar .logo .simple-text {
       text-transform: uppercase;
@@ -8947,7 +8944,7 @@ img {
   position: relative;
   float: right;
   width: calc(100% - 260px);
-  background-color: #f4f3ef;
+
   transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1); }
   .main-panel > .content {
     padding: 0 30px 30px;

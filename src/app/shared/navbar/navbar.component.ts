@@ -6,7 +6,8 @@ import { Location} from '@angular/common';
 @Component({
     moduleId: module.id,
     selector: 'navbar-cmp',
-    templateUrl: 'navbar.component.html'
+    templateUrl: 'navbar.component.html',
+    styleUrls: ['./navbar.component.scss']
 })
 
 export class NavbarComponent implements OnInit{
@@ -15,6 +16,7 @@ export class NavbarComponent implements OnInit{
     private nativeElement: Node;
     private toggleButton;
     private sidebarVisible: boolean;
+    private title: string;
 
     public isCollapsed = true;
     @ViewChild("navbar-cmp", {static: false}) button;
@@ -23,6 +25,8 @@ export class NavbarComponent implements OnInit{
         this.location = location;
         this.nativeElement = element.nativeElement;
         this.sidebarVisible = false;
+        this.listTitles = ROUTES.filter(listTitle => listTitle);
+        this.getTitle();
     }
 
     ngOnInit(){
@@ -30,21 +34,29 @@ export class NavbarComponent implements OnInit{
         var navbar : HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
         this.router.events.subscribe((event) => {
+        
           this.sidebarClose();
+          this.getTitle();
        });
     }
     getTitle(){
+
       var titlee = this.location.prepareExternalUrl(this.location.path());
-      console.log(titlee.toString());
+      this.title = "";
+      //console.log(titlee.toString());
       if(titlee.charAt(0) === '#'){
           titlee = titlee.slice( 1 );
       }
       for(var item = 0; item < this.listTitles.length; item++){
-          if(this.listTitles[item].path === titlee){
-              return this.listTitles[item].title;
+          //console.log("===this.title"+titlee+"=====list item"+this.listTitles[item].path);
+          if(("/app/"+this.listTitles[item].path) === titlee){
+              this.title = this.listTitles[item].title;
           }
+        
       }
-      return 'Dashboard';
+      if (this.title === ""){
+        this.title = "Dashboard";
+    }
     }
     sidebarToggle() {
         if (this.sidebarVisible === false) {

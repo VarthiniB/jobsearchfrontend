@@ -1,0 +1,28 @@
+
+ img {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  width: 80px; /* Set a small width */
+  height: 80px;
+}
+
+.container{
+  width:100%;
+	display:flex;
+	flex-wrap:wrap;
+	text-align:center;
+  justify-content: center;
+}
+.box{
+	width:100%;
+	max-width:40%;
+	border:1px solid black;
+  margin:20px;
+
+}
+
+.p{
+  color:black;
+  font-size: 20px
+}

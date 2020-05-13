@@ -24,12 +24,12 @@ export class TypographyComponent{
     
       lineChartColors: Color[] = [
         {
-          borderColor: 'black',
-          backgroundColor: 'rgba(255,255,0,0.28)',
+          borderColor: 'rgba(0,0,244,1)',
+          backgroundColor: 'rgba(0,0,255,0.2)',
         },
       ];
     
-      lineChartLegend = true;
+      lineChartLegend = false;
       lineChartPlugins = [];
       lineChartType = 'line';
 

@@ -11,12 +11,13 @@ import { NotificationsComponent } from '../../pages/notifications/notifications.
 import { AddJobComponent } from '../../pages/addJob/addJob.component';
 
 export const AdminLayoutRoutes: Routes = [
-    { path: 'dashboard',      component: DashboardComponent },
-    { path: 'user',           component: UserComponent },
-    { path: 'table',          component: TableComponent },
-    { path: 'typography',     component: TypographyComponent },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent },
-    { path: 'notifications',  component: NotificationsComponent },
-    { path: 'addjob',        component: AddJobComponent }
+    { path: 'app/dashboard',      component: DashboardComponent },
+    { path: 'app/user',           component: UserComponent },
+    { path: 'app/table',          component: TableComponent },
+    { path: 'app/typography',     component: TypographyComponent },
+    { path: 'app/icons',          component: IconsComponent },
+    { path: 'app/addnetwork',           component: MapsComponent },
+    { path: 'app/notifications',  component: NotificationsComponent },
+    { path: 'app/addjob',        component: AddJobComponent }
+    
 ];

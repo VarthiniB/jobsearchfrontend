@@ -20,18 +20,21 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartsModule } from 'ng2-charts';
-
-
+import { ReactiveFormsModule } from '@angular/forms';  
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgxPaginationModule} from 'ngx-pagination'; 
+import {LocationStrategy, Location, PathLocationStrategy} from '@angular/common';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
+    ReactiveFormsModule,
     NgbModule,
     NgbModalModule,
     ChartsModule,
+    NgxPaginationModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
@@ -49,7 +52,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NotificationsComponent,
     AddJobComponent
   ],
-  providers : []
+  providers : [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}]
 })
 
 export class AdminLayoutModule {}
