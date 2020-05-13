@@ -9,8 +9,9 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
-    { path: '/addjob',         title: 'Add job applied',             icon:'nc-diamond',    class: '' }
+    { path: 'app/dashboard',     title: 'Dashboard',         icon:'nc-chart-pie-36',       class: '' },
+    { path: 'app/addjob',         title: 'Add Job Applied',             icon:'nc-laptop',    class: '' },
+    { path: 'app/addnetwork',         title: 'Add Network',             icon:'nc-planet',    class: '' }
    
 ];
 
@@ -18,6 +19,7 @@ export const ROUTES: RouteInfo[] = [
     moduleId: module.id,
     selector: 'sidebar-cmp',
     templateUrl: 'sidebar.component.html',
+    styleUrls: ['./sidebar.component.scss']
 })
 
 export class SidebarComponent implements OnInit {

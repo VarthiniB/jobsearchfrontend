@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+    <div class="container-fluid">
+      <div class="navbar-wrapper">        
+      </div>    
+        <ul class="navbar-nav" *ngFor="let menuItem of menuItems" routerLinkActive="active" >        
+          <li >
+            <a [routerLink]="[menuItem.path]">
+                <p>{{menuItem.title}}</p>
+            </a>           
+          </li>  
+        </ul>
+        <ul>
+          <li class="navbar-nav" ><a (click)="open(mymodal)"><button class="btn btn-primary-outline pull-right">Login</button></a></li>
+          </ul>
+      </div>
+  
+  </nav>
+  <ng-template #mymodal let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <input type="text"  [(ngModel)]='t1' ><button (click)="submit()">submit</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+      </div>
+    </ng-template>

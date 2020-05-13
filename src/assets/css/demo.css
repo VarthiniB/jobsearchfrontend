@@ -20,7 +20,7 @@
 }
 
 .tim-white-buttons {
-  background-color: #777777;
+  background-color: #ffffff;
 }
 
 .typography-line {
@@ -87,7 +87,7 @@
 
 .demo-icons body {
   font-size: 1.6rem;
-  font-family: sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   color: #333333;
   background: white;
 }
@@ -152,7 +152,7 @@
 }
 
 .demo-icons ul li:hover {
-  background: #f4f4f4;
+  background: #ffffff;
 }
 
 .demo-icons ul p,

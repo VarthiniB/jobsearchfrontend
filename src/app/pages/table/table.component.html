@@ -1,55 +1,87 @@
-<div class="row">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-body">
-        <div class="table-responsive">
+      <div class="table-responsive">
+            <img src="../../../assets/img/plus.png" (click)="add()" *ngIf="mobile"/>
+          <form #login = "ngForm" (ngSubmit) = "onClickSubmit(login.value)"  >
           <table class="table">
-            <thead class=" text-primary">
-              <th>
-                Organization
+            <thead><tr>
+                
+              <th width="5%">
+                 <img src="../../../assets/img/plus.png" (click)="add()"/>
+            </th>
+            <th width="10%">Position
+            </th>
+            <th width="10%">Organization
               </th>
-              <th>
-                position
-              </th>
-              <th>
-                URL
-              </th>
-              <th>
-                 Applied Through
-              </th>
-              <th>
-                Date applied
-              </th>
-              <th>
-                files uploaded
+              <th width="10%">Date of Application
                 </th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  logo
+                <th width="10%">Link to Job Application
+                  </th>
+                <th width="10%">Date of Followup
+                  </th>
+                  <th width="10%">Status
+                    </th>
+                    <th width="10%">Feedback
+                      </th>
+                      <th width="10%">Comments
+                        </th>
+                     <!--   <th width="10%">Resume Uploaded
+                          </th> -->
+                <th width="5%">
+                  </th>
+          </tr></thead>
+          <tr *ngIf="buttonClicked" ><th></th>
+              <th>          
+                  <input type="text"  class="form-control border-input" name="position" ngModel>           
+              </th>
+              <th>          
+                  <input type="text"  class="form-control border-input" name="org" ngModel>           
+              </th>
+              <th>          
+                  <input type="date" class="form-control border-input" name="doa" ngModel>           
+              </th>
+              <th>          
+                  <input type="text"  class="form-control border-input" name="link" ngModel>           
+              </th>
+              <th>          
+                  <input type="date" class="form-control border-input" name="dof" ngModel>           
+              </th>
+              <th>          
+                  <input type="text"  class="form-control border-input" name="status" ngModel>           
+              </th>
+              <th>          
+                  <input type="text"  class="form-control border-input" name="feedback" ngModel>           
+              </th>
+              <th>          
+                  <input type="text"  class="form-control border-input" name="comments" ngModel>           
+              </th>
+              <!-- <th>          
+                  <input type="file"  class="form-control border-input" name="resume" ngModel>           
+              </th> -->
+                        
+                  <th><button type="submit" value="submit">
+                        <img src="../../../assets/img/tick.png" />
+                        </button>                      
+                     <img src="../../../assets/img/cross.png" (click)="cancel()"/>                                    
+                  </th>
+            </tr>
+              <tr *ngFor="let item of tableData2 | paginate: { itemsPerPage: 5, currentPage: p1, id: 'first' }">
+                <td></td>
+                <td ><div>{{item.position}}</div>
+                
                 </td>
-                <td>
-                 product owner
-                </td>
-                <td>
-                  https://indeed/
-                </td>
-                <td class="text-right">
-                  indeed
-                </td>
-                <td class="text-right">
-                   26/7/2019
-                  </td>
-                  <td class="text-right">
-                     files
-                    </td>
+                <td>{{item.org}}</td>
+                <td>{{item.doa}}</td>
+                <td>{{item.link}}</td>
+                <td>{{item.dof}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.feedback}}</td>
+                <td>{{item.comment}}</td>
+               <!-- <td>{{item.resume}}</td> -->
+                <td></td>
               </tr>
-             
-            </tbody>
-          </table>
+            </table>
+            <pagination-controls (pageChange)="p1 = $event" id="first"></pagination-controls>
+ 
+         </form>
         </div>
-      </div>
-    </div>
-  </div>
-  </div>
+
+      
