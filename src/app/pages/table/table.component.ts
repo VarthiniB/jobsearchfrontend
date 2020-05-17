@@ -1,4 +1,7 @@
 import { Component, OnInit} from '@angular/core';
+import { JobserviceService } from '../../jobservice.service';
+import { SharedServService } from '../../shared-serv.service';
+import {NgForm} from '@angular/forms';
 
 
 @Component({
@@ -16,116 +19,21 @@ export class TableComponent implements OnInit{
     public t2:string;
     public t3:string;
     public showt1req: boolean;
-   
+    public sno:string;
+   public ddate: any;
     private buttonClicked: boolean;
     private mobile: boolean;
 
-    constructor(){
+    constructor(public service: JobserviceService,public ss:SharedServService){
         this.text = 'no clicks yet';
         this.buttonClicked = false;
-        this.tableData2 =  [
-         
-               {
-                   "id":1,
-                   "position":"engineer",
-                   "org":"hcl",
-                    "doa":"28/4/12",
-                    "link":"www.indeed.com",
-                    "dof":"23/23/23",
-                    "status":"Applied",
-                    "feedback":"improve",
-                    "comment":"referred by prof",
-                    "resume":""
-               },
-               {
-                "id":2,
-                "position":"engineer",
-                "org":"hcl",
-                 "doa":"28/4/12",
-                 "link":"www.indeed.com",
-                 "dof":"23/23/23",
-                 "status":"Interview Scheduled",
-                 "feedback":"improve",
-                 "comment":"referred by prof",
-                 "resume":""
-            },
-            
-            {
-                "id":3,
-                "position":"engineer",
-                "org":"hcl",
-                 "doa":"28/4/12",
-                 "link":"www.indeed.com",
-                 "dof":"23/23/23",
-                 "status":"Completed",
-                 "feedback":"improve",
-                 "comment":"referred by prof",
-                 "resume":""
-            },
-            
-            {
-                "id":3,
-                "position":"engineer",
-                "org":"hcl",
-                 "doa":"28/4/12",
-                 "link":"www.indeed.com",
-                 "dof":"23/23/23",
-                 "status":"Selected",
-                 "feedback":"improve",
-                 "comment":"referred by prof",
-                 "resume":""
-            },  {
-                "id":1,
-                "position":"engineer",
-                "org":"hcl",
-                 "doa":"28/4/12",
-                 "link":"www.indeed.com",
-                 "dof":"23/23/23",
-                 "status":"Applied",
-                 "feedback":"improve",
-                 "comment":"referred by prof",
-                 "resume":""
-            },
-            {
-             "id":2,
-             "position":"engineer",
-             "org":"hcl",
-              "doa":"28/4/12",
-              "link":"www.indeed.com",
-              "dof":"23/23/23",
-              "status":"Interview Scheduled",
-              "feedback":"improve",
-              "comment":"referred by prof",
-              "resume":""
-         },
-         
-         {
-             "id":3,
-             "position":"engineer",
-             "org":"hcl",
-              "doa":"28/4/12",
-              "link":"www.indeed.com",
-              "dof":"23/23/23",
-              "status":"Completed",
-              "feedback":"improve",
-              "comment":"referred by prof",
-              "resume":""
-         },
-         
-         {
-             "id":3,
-             "position":"engineer",
-             "org":"hcl",
-              "doa":"28/4/12",
-              "link":"www.indeed.com",
-              "dof":"23/23/23",
-              "status":"Selected",
-              "feedback":"improve",
-              "comment":"referred by prof",
-              "resume":""
-         }
-            ]
-        
+        this.ddate = new Date();
+        this.sno = ss.getUid();
+       // ss.setUid(2);
+        service.getAllJobs(ss.getUid()).subscribe((data:any) => {
+            this.tableData2 = data;
+         });
+       
     }
     ngOnInit() {
        // console.log("================"+window.screen.width)
@@ -134,7 +42,7 @@ export class TableComponent implements OnInit{
         }
       }
     add(){
-        console.log("button clicked");
+      //  console.log("button clicked");
         this.buttonClicked = true;     
     }
     cancel(){
@@ -164,14 +72,27 @@ export class TableComponent implements OnInit{
        //this.buttonClicked = false;  
 }*/
 
-onClickSubmit(formData){
-console.log(JSON.stringify(formData));
+onClickSubmit(formData : NgForm){
+    //console.log("=="+formData+"=="+formData.value);
+    var data = formData;
+   // console.log("====data==="+JSON.stringify(data));
+    if((data.value.position == null || data.value.position == "") || (data.value.org == null || data.value.org == "")){
+        alert("Position and Organization are mandatory");
+    }
+    else{
+       //console.log(JSON.stringify(formData));
+       this.service.addJob(formData.value).subscribe((data) => {
+       // console.log(data);
+       this.service.getAllJobs(this.ss.getUid()).subscribe((data:any) => {
+        this.tableData2 = data;
+        formData.reset();
+     });
+       });
+    }
 }
 
 method2(value,id){
-
     console.log("==========="+value+"==="+id);
-
 }
 
 }

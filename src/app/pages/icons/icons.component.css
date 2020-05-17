@@ -7,15 +7,109 @@
     align-items: center;
     border-radius: 100%;
     text-align: center;
-    margin: 5px 20px;
+    margin: 0px 0px;
     font-size: 15px;
     font-family: 'Times New Roman';
     padding: 5px;
     display: flex;
-    height:15px;
-    width: 15px;
+    height:18px;
+    width: 18px;
     color: #fff;
   }
  .card{
   margin-bottom: 1px;
  }
+.nc-icon {
+    font-size: 25px;
+}
+.justify {
+
+  display: flex;
+  justify-content: space-between;
+  background-color: lightcoral;
+  
+}
+
+/* declare a 7 column grid on the table */
+#calendar {
+	width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+ 
+}
+
+#calendar tr, #calendar tbody {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+ width: 100%;
+}
+
+caption {
+	text-align: center;
+  grid-column: 1 / -1;
+  font-size: 130%;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+#calendar a {
+
+	text-decoration: none;
+}
+
+#calendar td, #calendar th {
+	padding: 5px;
+	box-sizing:border-box;
+
+}
+
+
+
+
+
+#calendar td {
+	height: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#calendar .date {
+	text-align: center;
+	margin-bottom: 5px;
+	padding: 4px;
+	width: 20px;
+	border-radius: 50%;
+  flex: 0 0 auto;
+  align-self: flex-end;
+}
+
+#calendar .event {
+  flex: 0 0 auto;
+	font-size: 13px;
+	border-radius: 4px;
+	padding: 5px;
+	margin-bottom: 5px;
+	line-height: 14px;
+	text-decoration: none;
+}
+
+#calendar .event-desc {
+
+	margin: 3px 0 7px 0;
+	text-decoration: none;	
+}
+
+
+table {
+  border-spacing: 0.5rem;
+}
+td {
+  padding: 0.5rem;
+  width: 65px;
+}
+
+ th, td {
+  border: 1px solid black;
+}

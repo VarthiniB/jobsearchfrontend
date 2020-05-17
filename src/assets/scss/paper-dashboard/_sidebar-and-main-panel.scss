@@ -19,7 +19,7 @@
     left: 0;
     z-index: 1030;
     border-right: 1px solid #ddd;
-    background-color: #f1f1f1;
+    background-color: darkslateblue;
     font-family: 'Times New Roman';
     .sidebar-wrapper{
         position: relative;
@@ -28,7 +28,7 @@
         width: 260px;
         z-index: 4;
         padding-bottom: 100px;
-        background-color: #f1f1f1;
+        background-color:darkslateblue;
 
         .dropdown .dropdown-backdrop{
           display: none !important;
@@ -147,7 +147,7 @@
             height: 100%;
             content: "";
             display: block;
-            background: #FFFFFF;
+            background:darkslateblue;
             opacity: 1;
         }
     }
@@ -193,7 +193,7 @@
             float: left;
             font-size: 50px;
             margin: 10px 10px;
-            color: $white-color;
+            color: white;
             line-height: 50px;
             font-family: 'Times New Roman'
         }
@@ -204,7 +204,7 @@
             display: block;
             white-space: nowrap;
             font-size: $font-size-large;
-            color: $white-color;
+            color: white;
             text-decoration: none;
             font-weight: $font-weight-normal;
             line-height: 30px;
@@ -247,7 +247,7 @@
 
     &[data-color="white"]{
       @include sidebar-color($white-color);
-      @include sidebar-text-color($default-color);
+      @include sidebar-text-color(white);
     }
     &[data-color="black"]{
       @include sidebar-color($dark-color);

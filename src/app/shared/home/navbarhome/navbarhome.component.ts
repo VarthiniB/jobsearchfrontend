@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { AuthorizationServiceService } from "../../../authorization-service.service";
+import { SharedServService } from '../../../shared-serv.service';
+import { JobserviceService } from '../../../jobservice.service';
+import {NgForm} from "@angular/forms";
+import { Router } from '@angular/router';
 
 export interface RouteInfo {
   path: string;
@@ -10,7 +15,7 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
   { path: 'home/homepage',     title: 'Home',         icon:'',       class: '' },
-  { path: 'home/blogpage',         title: 'Blog',             icon:'',    class: '' },
+ // { path: 'home/blogpage',         title: 'Blog',             icon:'',    class: '' },
   
 ];
 
@@ -26,8 +31,9 @@ export class NavbarhomeComponent implements OnInit {
   title = 'appBootstrap';
   t1: any;
   closeResult: string;
+  emailVerificationMessage: boolean = false;
   
-constructor(private modalService: NgbModal) {
+constructor(private modalService: NgbModal, public router:Router, public auth: AuthorizationServiceService,public ss:SharedServService,public jobService:JobserviceService) {
   this.t1 = "";
   }
   
@@ -54,6 +60,26 @@ constructor(private modalService: NgbModal) {
     
     submit(){
     console.log("===="+this.t1);
+    }
+
+    onSubmit(form: NgForm,content) {
+
+      const email = form.value.email;
+      const password = form.value.password;
+      
+      this.auth.signIn(email, password).subscribe((data) => {
+
+        this.jobService.getUser(email).subscribe((data:any) => {
+        // console.log("====="+JSON.stringify(data));
+         this.modalService.dismissAll(content);
+         this.ss.setUid(data[0].sno);
+         this.router.navigate(['/app/app/dashboard']);
+      });
+      
+        
+      }, (err)=> {
+        this.emailVerificationMessage = true;
+      });   
     }
 }
 

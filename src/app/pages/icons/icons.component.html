@@ -1,26 +1,36 @@
-<table style="align-items: center">
-  <tr *ngFor="let row of array1">
-    <td class="field" *ngFor="let field of row">
-  
-        <div class="card" >
-            <div class="card-header">
+
+    <div class="icon-big  text-center justify">
+      <i class="nc-icon nc-minimal-left" (click)="previousM()"></i>
+    {{months[timestamp1.getMonth()]}},{{timestamp1.getFullYear()}}
+      <i class="nc-icon nc-minimal-right" (click)="nextM()"></i>
+    </div>
+ 
+
+<div>
+<table id="calendar">
+  <tr class="weekdays" *ngFor="let row of array1">
+    <td class="field" *ngFor="let field of row" >  
+        <div class="" >
+            <div class="">
               {{field}}
               </div>
             </div>
         </td>
   </tr>
-    <tr *ngFor="let row of data">
-      <td class="field" *ngFor="let field of row">
-      
-        <div class="card" *ngIf="field.day">
-       <div style="align-self: center"> {{field.day}} <br></div>
+    <tr  *ngFor="let row of data">
+      <td class="day"  *ngFor="let field of row">      
+      <div  *ngIf="field.day">
+          <div class="">
+              {{field.day}} 
+          </div>          
         <div class="circles">
-          <div class="circle-with-text" *ngIf="field.jobcount">
-            {{field.jobcount}} 
+          <div class="circle-with-text" *ngIf="field.jobcount">            
+                  {{field.jobcount}}  
           </div>
          </div>
-        </div>
- 
+        </div> 
       </td>
     </tr>
   </table>
+
+</div>

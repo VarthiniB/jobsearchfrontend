@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedServService } from '../../shared-serv.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'addob',
@@ -13,6 +15,11 @@ export class AddJobComponent implements OnInit{
   public chartColor;
   public chartEmail;
   public chartHours;
+  constructor(public ss:SharedServService,private router: Router){
+    if(ss.getUid() == "" || ss.getUid() == undefined){
+      this.router.navigate(['/home/home/homepage']);
+  }
+  }
 
     ngOnInit(){
 
