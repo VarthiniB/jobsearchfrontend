@@ -75,6 +75,7 @@ export class TableComponent implements OnInit{
 onClickSubmit(formData : NgForm){
     //console.log("=="+formData+"=="+formData.value);
     var data = formData;
+    data.value.sno = this.ss.getUid();
    // console.log("====data==="+JSON.stringify(data));
     if((data.value.position == null || data.value.position == "") || (data.value.org == null || data.value.org == "")){
         alert("Position and Organization are mandatory");

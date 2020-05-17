@@ -53,7 +53,7 @@
       <div class="col-lg-4">
         <form (ngSubmit)="validateAuthCode(codeform)" #codeform="ngForm">
           <div class="form-group">
-            <label for="code">Code</label>
+            <label for="code"></label>
             <input type="text" name="code" id="code" ngModel class="form-control" required>
           </div>
           <button type="submit" class="btn btn-primary">Validate Code</button>
@@ -61,6 +61,6 @@
       </div>
     </div>
     <div *ngIf="codeWasConfirmed" class="row message-row">
-      <h3>Verification Code was confirmed, please click <a routerLink="/login">here</a> to login</h3>
+      <h3>Verification Code was confirmed, please Login</h3>
     </div>
   </div>
