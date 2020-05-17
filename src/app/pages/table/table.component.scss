@@ -10,17 +10,38 @@
     }
 }
 
-img {
+img  {
     padding: 0;
     display: block;
     margin: 0 auto;
-    max-height: 20px;
-    max-width: 20px;
+    max-height: 30px;
+    max-width: 30px;
 }
+input[type="date"] {
+	width: 140px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.id{
+	display: none;
+}
+button, input[type="submit"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+#content-mobile {display: none;}
 @media 
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
+	
+		#content-mobile {display: block;}
+	
 	/* Force table to not be like tables anymore */
 	table, thead, tbody, th, td, tr { 
 		display: block; 

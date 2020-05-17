@@ -1,6 +1,6 @@
       <div class="table-responsive">
-            <img src="../../../assets/img/plus.png" (click)="add()" *ngIf="mobile"/>
-          <form #login = "ngForm" (ngSubmit) = "onClickSubmit(login.value)"  >
+           <div id="content-mobile"> <img src="../../../assets/img/plus.png" (click)="add()"/></div>
+          <form #login = "ngForm" (ngSubmit) = "onClickSubmit(login)"  >
           <table class="table">
             <thead><tr>
                 
@@ -19,27 +19,28 @@
                   </th>
                   <th width="10%">Status
                     </th>
-                    <th width="10%">Feedback
+                    <th width="10%">Remarks
                       </th>
-                      <th width="10%">Comments
+                      <th width="10%">Location
                         </th>
                      <!--   <th width="10%">Resume Uploaded
                           </th> -->
                 <th width="5%">
                   </th>
           </tr></thead>
-          <tr *ngIf="buttonClicked" ><th></th>
-              <th>          
+          <tr *ngIf="buttonClicked" ><th> <img src="../../../assets/img/cross.png" (click)="cancel()"/>  </th>
+              <th>        
+                  <input type="text"  class="form-control border-input id" name="sno" [(ngModel)]='sno' ngModel>             
                   <input type="text"  class="form-control border-input" name="position" ngModel>           
               </th>
               <th>          
                   <input type="text"  class="form-control border-input" name="org" ngModel>           
               </th>
               <th>          
-                  <input type="date" class="form-control border-input" name="doa" ngModel>           
+                  <input type="date" class="form-control border-input" [(ngModel)]='ddate' name="doa" ngModel>           
               </th>
               <th>          
-                  <input type="text"  class="form-control border-input" name="link" ngModel>           
+                  <input type="text"  class="form-control border-input" name="url" ngModel>           
               </th>
               <th>          
                   <input type="date" class="form-control border-input" name="dof" ngModel>           
@@ -48,33 +49,31 @@
                   <input type="text"  class="form-control border-input" name="status" ngModel>           
               </th>
               <th>          
-                  <input type="text"  class="form-control border-input" name="feedback" ngModel>           
+                  <input type="text"  class="form-control border-input" name="remarks" ngModel>           
               </th>
               <th>          
-                  <input type="text"  class="form-control border-input" name="comments" ngModel>           
+                  <input type="text"  class="form-control border-input" name="location" ngModel>           
               </th>
               <!-- <th>          
                   <input type="file"  class="form-control border-input" name="resume" ngModel>           
               </th> -->
                         
                   <th><button type="submit" value="submit">
-                        <img src="../../../assets/img/tick.png" />
+                        <img class="tick" src="../../../assets/img/tick.png" />
                         </button>                      
-                     <img src="../../../assets/img/cross.png" (click)="cancel()"/>                                    
+                                                      
                   </th>
             </tr>
               <tr *ngFor="let item of tableData2 | paginate: { itemsPerPage: 5, currentPage: p1, id: 'first' }">
                 <td></td>
-                <td ><div>{{item.position}}</div>
-                
-                </td>
+                <td><div>{{item.position}}</div></td>
                 <td>{{item.org}}</td>
-                <td>{{item.doa}}</td>
-                <td>{{item.link}}</td>
-                <td>{{item.dof}}</td>
+                <td>{{item.doa  }}</td>
+                <td>{{item.url}}</td>
+                <td>{{item.dof  }}</td>
                 <td>{{item.status}}</td>
-                <td>{{item.feedback}}</td>
-                <td>{{item.comment}}</td>
+                <td>{{item.remarks}}</td>
+                <td>{{item.location}}</td>
                <!-- <td>{{item.resume}}</td> -->
                 <td></td>
               </tr>
@@ -84,4 +83,4 @@
          </form>
         </div>
 
-      
+     

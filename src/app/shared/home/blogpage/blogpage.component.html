@@ -54,3 +54,55 @@
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+      
+
+<div class="container">
+forgot password
+  <div class="row">
+    <div class="col-lg-4">
+      <form (ngSubmit)="register(regform)" #regform="ngForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" ngModel class="form-control">
+        </div>
+      
+        <button type="submit" class="btn btn-primary">send verification code</button>
+      </form>
+    </div>
+  </div>
+  <br/>
+  <div *ngIf="confirmCode" class="row message-row">
+    <h3>Please check your email for the validation code and enter it here:</h3>
+    <div class="col-lg-4">
+      <form (ngSubmit)="validateAuthCode(codeform)" #codeform="ngForm">
+        <div class="form-group">
+          <label for="code">Code</label>
+          <input type="text" name="code" id="code" ngModel class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Validate Code</button>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="codeWasConfirmed" class="row message-row">
+    <h3>enter new password</h3>
+    <form (ngSubmit)="submitnewpassword(newpform)" #newpform="ngForm">
+      <div class="form-group">
+        <label for="email">new password</label>
+        <input type="email" name="email" id="email" ngModel class="form-control">
+      </div>
+    
+      <button type="submit" class="btn btn-primary">confirm password</button>
+    </form>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/co
 import { ROUTES } from '../../sidebar/sidebar.component';
 import { Router } from '@angular/router';
 import { Location} from '@angular/common';
+import { AuthorizationServiceService } from "../../authorization-service.service";
 
 @Component({
     moduleId: module.id,
@@ -21,7 +22,8 @@ export class NavbarComponent implements OnInit{
     public isCollapsed = true;
     @ViewChild("navbar-cmp", {static: false}) button;
 
-    constructor(location:Location, private renderer : Renderer2, private element : ElementRef, private router: Router) {
+    constructor(location:Location, private renderer : Renderer2, private element : ElementRef, private router: Router,public auth:AuthorizationServiceService) {
+
         this.location = location;
         this.nativeElement = element.nativeElement;
         this.sidebarVisible = false;
@@ -33,6 +35,7 @@ export class NavbarComponent implements OnInit{
         this.listTitles = ROUTES.filter(listTitle => listTitle);
         var navbar : HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
+        console.log(this.toggleButton);
         this.router.events.subscribe((event) => {
         
           this.sidebarClose();
@@ -103,6 +106,10 @@ export class NavbarComponent implements OnInit{
           navbar.classList.remove('bg-white');
         }
 
+      }
+      logout(){
+        this.auth.logOut();
+        this.router.navigate(['/home/home/homepage']);
       }
 
 }

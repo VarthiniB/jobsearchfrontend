@@ -17,15 +17,42 @@
   </nav>
   <ng-template #mymodal let-modal>
       <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+        <h4 class="modal-title" id="modal-basic-title">Login</h4>
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
           <span aria-hidden="true">×</span>
         </button>
       </div>
       <div class="modal-body">
-          <input type="text"  [(ngModel)]='t1' ><button (click)="submit()">submit</button>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <form (ngSubmit)="onSubmit(f,mymodal)" #f="ngForm">
+        
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" ngModel class="form-control" required>
+                </div>
+        
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" id="password" ngModel class="form-control" required>
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Login</button>
+        
+              </form>
+            </div>
+          </div>
+          <br />
+          <div class="row message-row" *ngIf="emailVerificationMessage">
+            <div class="col-lg-8">
+              <div class="alert alert-danger">
+                Could not log you in.  Please verify your email and then attempt to sign in.
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
-      </div>
+    
     </ng-template>
