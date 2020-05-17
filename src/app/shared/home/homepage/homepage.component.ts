@@ -14,7 +14,7 @@ export class HomepageComponent implements OnInit {
   confirmCode: boolean = false;
   codeWasConfirmed: boolean = false;
   error: string = "";
-  
+
   constructor(public router:Router, public auth: AuthorizationServiceService,public jobsearch:JobserviceService) { }
 
   ngOnInit(): void {
@@ -33,9 +33,9 @@ register(form: NgForm) {
   this.auth.register(email, password).subscribe(
     (data) => {        
       this.confirmCode = true;
-   
+      form.reset();
       this.jobsearch.addUser(form.value).subscribe((data) => {
-        console.log(data);
+         console.log(data);
       });
     },
     (err) => {
@@ -53,7 +53,8 @@ validateAuthCode(form: NgForm) {
       //this._router.navigateByUrl('/');
       this.codeWasConfirmed = true;
       this.confirmCode = false;
-    },
+      form.reset();
+        },
     (err) => {
       console.log(err);
       this.error = "Confirm Authorization Error has occurred";
