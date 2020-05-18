@@ -33,8 +33,9 @@ register(form: NgForm) {
   this.auth.register(email, password).subscribe(
     (data) => {        
       this.confirmCode = true;
-      form.reset();
+   
       this.jobsearch.addUser(form.value).subscribe((data) => {
+        form.reset();
          console.log(data);
       });
     },
